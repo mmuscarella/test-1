@@ -59,8 +59,6 @@ Chris Balakrishnan
 + about me: nefarious affiliate
 
 
-### _Friends_
-
 Chequita Brooks
 
 + email: brooksch16@students.ecu.edu
