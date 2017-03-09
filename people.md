@@ -27,8 +27,8 @@ Luise Armstrong
 
 Gina Bledsoe
 
-+ email:
-+ about me:
++ email: bledsoer15@students.ecu.edu
++ about me: RRRRRRRRRR
 
 Casey Eakins
 
