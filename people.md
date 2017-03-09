@@ -5,6 +5,8 @@
 
 Ariane Peralta
 
+![Honey Badger](https://commons.wikimedia.org/w/index.php?curid=15656851)
+
 + email: peraltaa@ecu.ed
 + about me: I love most microbes. I love all cookies.
 
@@ -38,14 +40,13 @@ Debbie Lichti
 
 Alex Stucy
 
-<<<<<<< HEAD
 + email: stucya16@students.ecu.edu
 + about me: Recently found $10 in an old pair of shorts -- planning to purchase some ice cream after mastering GitHub.
-=======
+
 
 + email:
 + about me:
->>>>>>> upstream/master
+
 
 ### _Nefarious Affiliates_
 
@@ -53,8 +54,19 @@ Chris Balakrishnan
 + email: balakrishnanc@ecu.edu
 + about me: nefarious affiliate
 
-<<<<<<< HEAD
+### _Friends_
+
+Chequita Brooks
+
 + email: brooksch16@students.ecu.edu
 + about me: budding microbial ecologist
-=======
->>>>>>> upstream/master
+
+Mario Muscarella
+
++ email: mmuscar@illinois.edu
++ about me: just fixing some github issues
++ website: [check it out](https://mmuscarella.github.io)
+
+
+
+
