@@ -5,7 +5,7 @@
 
 Ariane Peralta
 
-![Honey Badger](https://commons.wikimedia.org/w/index.php?curid=15656851)
+![Honey Badger](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Mellivora_capensis_in_Howletts_Wild_Animal_Park.jpg/320px-Mellivora_capensis_in_Howletts_Wild_Animal_Park.jpg ){:height="24px"}
 
 + email: peraltaa@ecu.ed
 + about me: I love most microbes. I love all cookies.
