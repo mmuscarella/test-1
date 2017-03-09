@@ -9,6 +9,13 @@ Ariane Peralta
 + about me:
 
 
+### Dan
+
+Dan Newhouse
+
++ email: newhoused12@students.ecu.edu
++ about me: i like things
+
 ### _Graduate Students_
 
 Luise Armstrong
@@ -41,7 +48,4 @@ Alex Stucy
 + email:
 + about me:
 
-Dan Newhouse
 
-+ email: newhoused12@students.ecu.edu
-+ about me: i like things
