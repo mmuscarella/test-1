@@ -38,7 +38,17 @@ Debbie Lichti
 
 Alex Stucy
 
+
 + email:
 + about me:
 
+<<<<<<< HEAD
 ### _Friends of the Peralta Lab
+=======
+### _Nefarious Affiliates_
+
+Chris Balakrishnan
++ email: balakrishnanc@ecu.edu
++ about me: nefarious affiliate
+
+>>>>>>> upstream/master
