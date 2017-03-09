@@ -48,3 +48,7 @@ Chris Balakrishnan
 + email: balakrishnanc@ecu.edu
 + about me: nefarious affiliate
 
+Chequita Brooks
++ email: brooksch16@students.ecu.edu
++ about me: charming microbial minion
+
