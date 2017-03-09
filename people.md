@@ -49,27 +49,22 @@ Alex Stucy
 
 + email: stucya16@students.ecu.edu
 + about me: Recently found $10 in an old pair of shorts -- planning to purchase some ice cream after mastering GitHub.
-<<<<<<< HEAD
 
-
-+ email:
-+ about me:
-
-=======
->>>>>>> upstream/master
 
 ### _Nefarious Affiliates_
+
 Chris Balakrishnan
+
 + email: balakrishnanc@ecu.edu
 + about me: nefarious affiliate
 
-<<<<<<< HEAD
+
 ### _Friends_
 
 Chequita Brooks
 
 + email: brooksch16@students.ecu.edu
-+ about me: budding microbial ecologist
++ about me: budding microbial ecologist, we're gonna do this guys! 
 
 Mario Muscarella
 
@@ -78,10 +73,4 @@ Mario Muscarella
 + website: [check it out](https://mmuscarella.github.io)
 
 
-
-=======
-Chequita
-+ email: brooksch16@students.ecu.edu
-+ about me: we're gonna do this guys! 
->>>>>>> upstream/master
 
