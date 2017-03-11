@@ -87,13 +87,15 @@ drop1(fit,~.,test="F")
 
 # PLOT 2-way factorial ANOVA
 ```{r}
+library(Rmisc)
 sum.dea <- summarySE(data.dea, measurevar="DEA", groupvars=c("moisture", "salinity"))
 as.factor(sum.dea$salinity)
-pd <- position_dodge(3)
+pd <- position_dodge(3.25)
 p <- ggplot(sum.dea, aes(x=moisture, y=DEA, group=salinity, colour=factor(salinity), shape=factor(salinity))) + 
 theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) 
 
-p2 <- p + geom_errorbar(aes(ymin=DEA-se, ymax=DEA+se), colour="black", width=7, position=pd) + scale_shape_manual(values = c(15, 16, 17, 18)) + geom_point(position=pd, size=5)  + scale_colour_manual(values = c("#666666", "#66CCFF", "#0000FF", "#000099")) + xlab("Moisture (%)") + ylab("potential denitrification rate") + scale_x_continuous(breaks=seq(0, 70, 10)) + theme(legend.justification=c(0,-1.1), legend.position=c(0.05,0))
+p2 <- p + scale_shape_manual(values = c(15, 16, 17, 18)) + geom_point(position=pd, size=5)  + scale_colour_manual(values = c("#666666", "#66CCFF", "#0000FF", "#000099")) + xlab("Moisture (%)") + geom_errorbar(aes(ymin=DEA-se, ymax=DEA+se), colour="black", width=7, position=pd) + ylab("Denitrification Rate\n(ng N2O * g^-1 sediment * hr^-1)") + scale_x_continuous(breaks=seq(0, 70, 10)) + theme(legend.justification=c(0,-1), legend.position=c(0.075,0)) + 
+theme(axis.ticks.length=unit(0.3,"cm")) 
 
 p2 + theme(axis.title=element_text(size=18), axis.text=element_text(size=16), axis.text.x = element_text(size=16), panel.border = element_rect(colour = "black",size=1.25)) 
 
