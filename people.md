@@ -51,6 +51,9 @@ Alex Stucy
 + about me: Recently found $10 in an old pair of shorts -- planning to purchase some ice cream after mastering GitHub.
 
 
+
+### _Friends of the Peralta Lab
+=======
 ### _Nefarious Affiliates_
 
 Chris Balakrishnan
@@ -58,6 +61,7 @@ Chris Balakrishnan
 + email: balakrishnanc@ecu.edu
 + about me: nefarious affiliate
 
+=======
 
 Chequita Brooks
 
@@ -69,6 +73,3 @@ Mario Muscarella
 + email: mmuscar@illinois.edu
 + about me: just fixing some github issues
 + website: [check it out](https://mmuscarella.github.io)
-
-
-
