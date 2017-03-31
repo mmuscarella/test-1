@@ -47,7 +47,7 @@ HSD <- HSD.test(prnd.lm2,"Rotation", console=TRUE)
 
 p <- ggplot(data.prnd, aes(Rotation,copies))
 p + geom_boxplot() + theme_bw()
-p + geom_boxplot() + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +theme(axis.title=element_text(vjust=1,size=16,face="bold"), axis.text=element_text(size=14), axis.text.x = element_text(vjust=0.65, hjust=0.5, angle=30, size=14), panel.border = element_rect(colour = "black",size=1.25)) + theme(axis.ticks.length=unit(0.3,"cm")) + xlab("Crop Diversity") + ylab("Log copy number of prnD gene/g soil") +scale_x_discrete(breaks=c("fallow", "CSW-2cov", "CSW-1cov", "CSW", "CS", "C-1cov", "C"), labels=c("fallow", "CSW_2cov", "CSW_1cov", "CSW", "CS","C_1cov", "mC"))
+p + geom_boxplot() + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +theme(axis.title=element_text(vjust=1,size=16,face="bold"), axis.text=element_text(size=14), axis.text.x = element_text(vjust=0.65, hjust=0.5, angle=30, size=14), panel.border = element_rect(colour = "black",size=1.25)) + theme(axis.ticks.length=unit(0.3,"cm")) + xlab("Crop Diversity") + ylab("Log copy number\n(prnD gene/g soil)") +scale_x_discrete(breaks=c("fallow", "CSW-2cov", "CSW-1cov", "CSW", "CS", "C-1cov", "C"), labels=c("fallow", "CSW_2cov", "CSW_1cov", "CSW", "CS","C_1cov", "mC"))
 
 ggsave("prnDabundanceRplot.pdf", plot=last_plot(), device=NULL, path=NULL, scale=1, width=NA, height=NA, dpi=300, limitsize=TRUE)
 
@@ -61,7 +61,7 @@ p + geom_boxplot() + theme_bw() + theme(panel.grid.major = element_blank(), pane
   theme(axis.title=element_text(vjust=1,size=16,face="bold"), axis.text=element_text(size=14), 
         axis.text.x = element_text(vjust=0.65, hjust=0.5, angle=30, size=14), panel.border =   
           element_rect(colour = "black",size=1.25)) + theme(axis.ticks.length=unit(0.3,"cm")) + 
-  xlab("Crop Diversity") + ylab("Shannon Diversity Index (H')") +
+  xlab("Crop Diversity") + ylab("Shannon Diversity (H')") +
   scale_x_discrete(breaks=c("fallow", "CSW-2cov", "CSW-1cov", "CSW", "CS", "C-1cov", "C"),   
                    labels=c("fallow", "CSW_2cov", "CSW_1cov", "CSW", "CS","C_1cov", "mC"))
 
@@ -73,6 +73,7 @@ ggsave("shannonRplot.pdf", plot=last_plot(), device=NULL, path=NULL, scale=1, wi
 ```{r}
 rm(list=ls())
 data.dea <- read.csv("./data/2017_CSW_DEA_SAL-H2Oexpt.csv", header=TRUE)
+data.dea$LogDEA <- log10(data.dea$DEA)
 
 ```
 
@@ -81,20 +82,29 @@ data.dea <- read.csv("./data/2017_CSW_DEA_SAL-H2Oexpt.csv", header=TRUE)
 dea.test <- aov(DEA~moisture+salinity, data=data.dea)
 fit <- aov(DEA ~ moisture*salinity, data=data.dea)
 summary(fit)
-plot(fit)
+#plot(fit)
 drop1(fit,~.,test="F")
+
+dea.test <- aov(LogDEA~moisture+salinity, data=data.dea)
+fit <- aov(LogDEA ~ moisture*salinity, data=data.dea)
+summary(fit)
+
 ```
 
 # PLOT 2-way factorial ANOVA
 ```{r}
 library(Rmisc)
-sum.dea <- summarySE(data.dea, measurevar="DEA", groupvars=c("moisture", "salinity"))
+sum.dea <- summarySE(data.dea, measurevar="LogDEA", groupvars=c("moisture", "salinity"))
 as.factor(sum.dea$salinity)
 pd <- position_dodge(3.25)
-p <- ggplot(sum.dea, aes(x=moisture, y=DEA, group=salinity, colour=factor(salinity), shape=factor(salinity))) + 
+p <- ggplot(sum.dea, aes(x=moisture, y=LogDEA, group=salinity, colour=factor(salinity), shape=factor(salinity))) + 
 theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) 
 
-p2 <- p + scale_shape_manual(values = c(15, 16, 17, 18)) + geom_point(position=pd, size=5)  + scale_colour_manual(values = c("#999999", "#CCFF00", "#009933", "#003300")) + xlab("Moisture (%)") + geom_errorbar(aes(ymin=DEA-se, ymax=DEA+se), colour="black", width=7, position=pd) + ylab("Denitrification Rate\n(ng N2O * g^-1 sediment * hr^-1)") + scale_x_continuous(breaks=seq(0, 70, 10)) + theme(legend.justification=c(0,-1), legend.position=c(0.075,0)) + 
+p2 <- p + scale_shape_manual(values = c(15, 16, 17, 18)) + geom_point(position=pd, size=5)  + scale_colour_manual(values = c("#999999", "#CCFF00", "#009933", "#003300")) + xlab("Moisture (%)") + 
+  geom_errorbar(aes(ymin=LogDEA-se, ymax=LogDEA+se), colour="black", width=7, position=pd) +
+  ylab(expression(paste("Denitrification Rate (Log"[10], ")"))) +
+  # \n (ng N2O * g^-1 sediment * hr^-1)"))
+  scale_x_continuous(breaks=seq(0, 70, 10)) + theme(legend.justification=c(0,-1), legend.position=c(0.075,0)) + 
 theme(axis.ticks.length=unit(0.3,"cm")) 
 
 p2 + theme(axis.title=element_text(size=18), axis.text=element_text(size=16), axis.text.x = element_text(size=16), panel.border = element_rect(colour = "black",size=1.25)) 
